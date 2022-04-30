@@ -3,16 +3,15 @@
 #include <ctype.h>
 
 int main(){
-    char PlayerInterestedToPlay;
+    char playerInterestedToPlay;
     do{
         system("clear");
-        PlayerInterestedToPlay = ' ';
+        playerInterestedToPlay = ' ';
         const char winCases[3][2][10] = {
             {"rock", "scissors"},
             {"scissors", "paper"},
             {"paper", "rock"}
         };
-
         srand(time(NULL));
         const int randomNumber = rand() % 3;
         const char options[3][10] = {"scissors", "paper", "rock"};
@@ -33,7 +32,6 @@ int main(){
                 }
         }
         
-
         if(strcmp(userChoice, pcChoice) == 0){
             printf("Tie !\n");
         } else if (checkForWin){
@@ -42,14 +40,12 @@ int main(){
             printf("You lose!\n");
         }
 
-        printf("\nWould you like to play again? (y/N): \n");
-        
-        scanf("%s", &PlayerInterestedToPlay);
-        PlayerInterestedToPlay = toupper(PlayerInterestedToPlay);
-        
+        printf("\nWould you like to play again? (Y/N): \n");
+        scanf("%s", &playerInterestedToPlay);
+        playerInterestedToPlay = toupper(playerInterestedToPlay);
 
     }
-    while(PlayerInterestedToPlay == 'Y');
+    while(playerInterestedToPlay == 'Y');
     
 	return 0;
 }
